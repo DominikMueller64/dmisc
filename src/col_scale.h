@@ -1,0 +1,1 @@
+void col_scale(NumericMatrix x, NumericVector center, NumericVector scale);

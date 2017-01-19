@@ -1,0 +1,16 @@
+Package: dmisc
+Title: Dominik Mueller's R Code
+Version: 0.0.0.9000
+Authors@R: person("Dominik", "Mueller", email = "dominikmueller64@yahoo.de", role = c("aut", "cre"))
+Description: Miscellaneous R functions for personal use.
+Depends:
+    R (>= 3.3.2)
+License: GPL-3
+URL: https://bitbucket.org/DominikMueller/dmisc
+LazyData: true
+LinkingTo: Rcpp, RcppArmadillo
+Imports:
+    Rcpp,
+    purrr,
+    RcppArmadillo
+RoxygenNote: 5.0.1
