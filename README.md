@@ -1,6 +1,5 @@
 # dmisc
-[![Build Status](https://travis-ci.org/DominikMueller64/LDtools.svg?branch=master)](https://travis-ci.org/DominikMueller64/LDtools)
-[![Travis-CI Build Status](https://travis-ci.org/.svg?branch=master)](https://travis-ci.org/)
+[![Build Status](https://travis-ci.org/DominikMueller64/dmisc.svg?branch=master)](https://travis-ci.org/DominikMueller64/dmisc)
 ---
 
 dmisc is an [R](http://www.r-project.org) package with miscellaneous R functions that are useful to me.
