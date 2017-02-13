@@ -6,11 +6,11 @@
 #' @param x The set of value to be split into subsets, a \code{vector} or \code{list}.
 #' @param n The desired number of subsets.
 #' @param random Should the elements of the subsets be randomly sampled from \code{x}?
-#' @param beginning Should elements in excess should be added to the subsets from the
-#' beginning of the output or randomly assigned?
-#'
-#' @return A list containing the subsets. An attribte \code{'indices'} contained the
-#' indices of the entries that contain the excess elements.
+#' @param beginning Should excess elements be added starting at the beginning of
+#' the subsets or randomly assigned? 
+#' @return A list containing the subsets. If set sizes are unequal, an attribute
+#' \code{'indices'} is added and containes the indices of the subsets to which excess
+#' elements were added.
 #'
 #' @details Note that if the number of desired subsets \code{n} is larger than the supplied set
 #' \code{x}, the output will still be a list with length \code{n} where \code{length(x)} entries
@@ -52,7 +52,7 @@ equal_split <- function(x, n, random = TRUE, beginning = FALSE) {
     x <<- setdiff(x, smp)
     smp
   })
-  attr(ret, which = 'indices') <- ix
-
+  if (rem > 0L)
+    attr(ret, which = 'indices') <- ix
   ret
 }
