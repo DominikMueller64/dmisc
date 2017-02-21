@@ -43,14 +43,15 @@ equal_split <- function(x, n, random = TRUE, beginning = FALSE) {
     sizes[ix] <- sizes[ix] + 1L
   }
 
+  s <- seq_len(length(x))
   ret <- purrr::map(sizes, function(size) {
     if (random) {
-      smp <- unlist(sample(x, size), recursive = FALSE, use.names = FALSE)
+      smp <- sample(x = s, size = size)
     } else {
-      smp <- x[seq.int(from = 1L, to = size)]
+      smp <- s[seq.int(from = 1L, to = size)]
     }
-    x <<- setdiff(x, smp)
-    smp
+    s <<- setdiff(s, smp)
+    x[smp]
   })
   if (rem > 0L)
     attr(ret, which = 'indices') <- ix
