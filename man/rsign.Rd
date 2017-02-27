@@ -25,4 +25,3 @@ rsign(10L, p = 0.95)
 \author{
 Dominik Mueller
 }
-

@@ -26,10 +26,9 @@ if there is a match or not for its left operand
 
 \code{`\%in_dbl\%` <- function(x, table) match_dbl(x, table, nomatch = 0) > 0}
 }
-\author{
-Dominik Mueller
-}
 \seealso{
 \code{\link{match_dbl}}
 }
-
+\author{
+Dominik Mueller
+}

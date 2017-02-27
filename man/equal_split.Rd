@@ -13,12 +13,13 @@ equal_split(x, n, random = TRUE, beginning = FALSE)
 
 \item{random}{Should the elements of the subsets be randomly sampled from \code{x}?}
 
-\item{beginning}{Should elements in excess should be added to the subsets from the
-beginning of the output or randomly assigned?}
+\item{beginning}{Should excess elements be added starting at the beginning of
+the subsets or randomly assigned?}
 }
 \value{
-A list containing the subsets. An attribte \code{'indices'} contained the 
-indices of the entries that contain the excess elements.
+A list containing the subsets. If set sizes are unequal, an attribute
+\code{'indices'} is added and containes the indices of the subsets to which excess
+elements were added.
 }
 \description{
 Split a set x stored in a \code{vector} or \code{list} into a number of maximally equally
@@ -47,4 +48,3 @@ equal_split(x, n = 20L, random = TRUE, beginning = FALSE)
 \author{
 Domink Mueller (\email{dominikmueller64@yahoo.de})
 }
-

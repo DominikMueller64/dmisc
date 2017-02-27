@@ -29,4 +29,3 @@ rmvel(list(5, 7, 'hi'), 'hi', 7, 90)
 \author{
 Dominik Mueller
 }
-

@@ -29,4 +29,3 @@ cllps(c(letters), '_')
 \author{
 Dominik Mueller
 }
-

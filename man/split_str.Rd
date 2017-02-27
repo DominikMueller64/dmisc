@@ -29,10 +29,9 @@ This function is equivalent to \code{strsplit(x, split, fixed = TRUE)[[1L]]}.
 x <- '2_3_4'
 split_str(x, '_')
 }
-\author{
-Dominik Mueller
-}
 \seealso{
 \code{\link[base]{strsplit}}
 }
-
+\author{
+Dominik Mueller
+}

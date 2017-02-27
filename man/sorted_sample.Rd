@@ -37,4 +37,3 @@ sorted_sample(letters[seq_len(3L)], 10L, replace = TRUE)
 \author{
 Dominik Mueller
 }
-

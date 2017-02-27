@@ -42,4 +42,3 @@ diag(d) <- diag(d) + epsilon # canonical approach
 \author{
 Dominik Mueller
 }
-

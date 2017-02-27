@@ -50,11 +50,10 @@ identical(m1_dbl, match_dbl(x, table, tolerance = 1e-11)) # also FALSE now
 
 
 }
-\author{
-Dominik Mueller
-}
 \seealso{
 \code{\link{\%in_dbl\%}} for an numerical analog to
 \code{\link[base]{\%in\%}}
 }
-
+\author{
+Dominik Mueller
+}

@@ -35,4 +35,3 @@ split_matrix(x, 'col')
 \author{
 Dominik Mueller
 }
-

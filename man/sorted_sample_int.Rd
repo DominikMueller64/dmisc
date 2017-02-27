@@ -31,4 +31,3 @@ sorted_sample_int(10L, 5L)
 \author{
 Dominik Mueller
 }
-

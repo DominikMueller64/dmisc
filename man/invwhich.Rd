@@ -28,4 +28,3 @@ invwhich(c(5, 3, 7), 10)
 \author{
 flying sheep (\url{http://stackoverflow.com/a/31114463/4477223})
 }
-

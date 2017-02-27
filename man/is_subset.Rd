@@ -35,4 +35,3 @@ is_subset(c(1L, 3L), c(1.0, 6.0, 3.0))
 \author{
 Dominik Mueller
 }
-

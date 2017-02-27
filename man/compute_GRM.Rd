@@ -105,4 +105,3 @@ ggplot(data = dat,
 \author{
 Dominik Mueller
 }
-

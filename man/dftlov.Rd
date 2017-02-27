@@ -32,4 +32,3 @@ dftlov(dat, values = 'pos', ids = 'id', by = 'chrom')
 \author{
 Dominik Mueller
 }
-

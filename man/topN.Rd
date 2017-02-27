@@ -35,4 +35,3 @@ all(dplyr::near(a, b))
 \author{
 Dominik Mueller
 }
-

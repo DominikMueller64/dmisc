@@ -31,4 +31,3 @@ mat2df(mat)
 \author{
 Dominik Mueller
 }
-

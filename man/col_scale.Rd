@@ -64,4 +64,3 @@ microbenchmark::microbenchmark(times = 10L,
 \author{
 Dominik Mueller
 }
-

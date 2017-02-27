@@ -28,4 +28,3 @@ nested_list(len = c(2, 4, 3), fill = NA)
 \author{
 Dominik Mueller (\email{dominikmueller64@yahoo.de})
 }
-

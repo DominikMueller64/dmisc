@@ -27,4 +27,3 @@ rrcombn(letters)
 \author{
 Dominik Mueller
 }
-

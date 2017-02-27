@@ -25,12 +25,24 @@ add_diag_int_vec <- function(x, epsilon) {
     .Call('dmisc_col_scale_copy', PACKAGE = 'dmisc', x, center, scale)
 }
 
+.combine_asym_arma <- function(x, rows, cols) {
+    .Call('dmisc_combine_asym_arma', PACKAGE = 'dmisc', x, rows, cols)
+}
+
+.combine_sym_arma <- function(x, rows, cols) {
+    .Call('dmisc_combine_sym_arma', PACKAGE = 'dmisc', x, rows, cols)
+}
+
 match_dbl_cpp <- function(x, table, nomatch, tolerance) {
     .Call('dmisc_match_dbl_cpp', PACKAGE = 'dmisc', x, table, nomatch, tolerance)
 }
 
 nth_partial_sort <- function(x, nth, increasing = TRUE) {
     .Call('dmisc_nth_partial_sort', PACKAGE = 'dmisc', x, nth, increasing)
+}
+
+.sparse_tcrossprod <- function(x, y, nonzero) {
+    .Call('dmisc_tcrossprod', PACKAGE = 'dmisc', x, y, nonzero)
 }
 
 stl_partial_sort <- function(x, n, increasing = TRUE) {
