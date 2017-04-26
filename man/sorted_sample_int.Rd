@@ -12,9 +12,9 @@ sorted_sample_int(n, size, replace = FALSE, prob = NULL)
 
 \item{size}{a non-negative integer giving the number of items to choose.}
 
-\item{replace}{Should sampling be with replacement?}
+\item{replace}{should sampling be with replacement?}
 
-\item{prob}{A vector of probability weights for obtaining the elements
+\item{prob}{a vector of probability weights for obtaining the elements
     of the vector being sampled.}
 }
 \value{

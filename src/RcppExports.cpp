@@ -75,32 +75,6 @@ BEGIN_RCPP
     return rcpp_result_gen;
 END_RCPP
 }
-// combine_asym_arma
-arma::mat combine_asym_arma(const Rcpp::List& x, const arma::ivec& rows, const arma::ivec& cols);
-RcppExport SEXP dmisc_combine_asym_arma(SEXP xSEXP, SEXP rowsSEXP, SEXP colsSEXP) {
-BEGIN_RCPP
-    Rcpp::RObject rcpp_result_gen;
-    Rcpp::RNGScope rcpp_rngScope_gen;
-    Rcpp::traits::input_parameter< const Rcpp::List& >::type x(xSEXP);
-    Rcpp::traits::input_parameter< const arma::ivec& >::type rows(rowsSEXP);
-    Rcpp::traits::input_parameter< const arma::ivec& >::type cols(colsSEXP);
-    rcpp_result_gen = Rcpp::wrap(combine_asym_arma(x, rows, cols));
-    return rcpp_result_gen;
-END_RCPP
-}
-// combine_sym_arma
-arma::mat combine_sym_arma(const Rcpp::List& x, const arma::ivec& rows, const arma::ivec& cols);
-RcppExport SEXP dmisc_combine_sym_arma(SEXP xSEXP, SEXP rowsSEXP, SEXP colsSEXP) {
-BEGIN_RCPP
-    Rcpp::RObject rcpp_result_gen;
-    Rcpp::RNGScope rcpp_rngScope_gen;
-    Rcpp::traits::input_parameter< const Rcpp::List& >::type x(xSEXP);
-    Rcpp::traits::input_parameter< const arma::ivec& >::type rows(rowsSEXP);
-    Rcpp::traits::input_parameter< const arma::ivec& >::type cols(colsSEXP);
-    rcpp_result_gen = Rcpp::wrap(combine_sym_arma(x, rows, cols));
-    return rcpp_result_gen;
-END_RCPP
-}
 // match_dbl_cpp
 IntegerVector match_dbl_cpp(NumericVector x, NumericVector table, int nomatch, double tolerance);
 RcppExport SEXP dmisc_match_dbl_cpp(SEXP xSEXP, SEXP tableSEXP, SEXP nomatchSEXP, SEXP toleranceSEXP) {
@@ -112,6 +86,32 @@ BEGIN_RCPP
     Rcpp::traits::input_parameter< int >::type nomatch(nomatchSEXP);
     Rcpp::traits::input_parameter< double >::type tolerance(toleranceSEXP);
     rcpp_result_gen = Rcpp::wrap(match_dbl_cpp(x, table, nomatch, tolerance));
+    return rcpp_result_gen;
+END_RCPP
+}
+// prob_recomb
+Rcpp::NumericMatrix prob_recomb(const Rcpp::NumericVector& x);
+RcppExport SEXP dmisc_prob_recomb(SEXP xSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< const Rcpp::NumericVector& >::type x(xSEXP);
+    rcpp_result_gen = Rcpp::wrap(prob_recomb(x));
+    return rcpp_result_gen;
+END_RCPP
+}
+// segr_var
+double segr_var(const Rcpp::NumericVector& pat, const Rcpp::NumericVector& mat, const Rcpp::NumericVector& pos, const Rcpp::NumericVector& p, const Rcpp::NumericVector& alpha);
+RcppExport SEXP dmisc_segr_var(SEXP patSEXP, SEXP matSEXP, SEXP posSEXP, SEXP pSEXP, SEXP alphaSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< const Rcpp::NumericVector& >::type pat(patSEXP);
+    Rcpp::traits::input_parameter< const Rcpp::NumericVector& >::type mat(matSEXP);
+    Rcpp::traits::input_parameter< const Rcpp::NumericVector& >::type pos(posSEXP);
+    Rcpp::traits::input_parameter< const Rcpp::NumericVector& >::type p(pSEXP);
+    Rcpp::traits::input_parameter< const Rcpp::NumericVector& >::type alpha(alphaSEXP);
+    rcpp_result_gen = Rcpp::wrap(segr_var(pat, mat, pos, p, alpha));
     return rcpp_result_gen;
 END_RCPP
 }
@@ -128,16 +128,40 @@ BEGIN_RCPP
     return rcpp_result_gen;
 END_RCPP
 }
-// tcrossprod
-arma::mat tcrossprod(const arma::mat& x, const arma::mat& y, const arma::uvec& nonzero);
-RcppExport SEXP dmisc_tcrossprod(SEXP xSEXP, SEXP ySEXP, SEXP nonzeroSEXP) {
+// inv_sympd
+arma::mat inv_sympd(const arma::mat& A);
+RcppExport SEXP dmisc_inv_sympd(SEXP ASEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
-    Rcpp::traits::input_parameter< const arma::mat& >::type x(xSEXP);
-    Rcpp::traits::input_parameter< const arma::mat& >::type y(ySEXP);
-    Rcpp::traits::input_parameter< const arma::uvec& >::type nonzero(nonzeroSEXP);
-    rcpp_result_gen = Rcpp::wrap(tcrossprod(x, y, nonzero));
+    Rcpp::traits::input_parameter< const arma::mat& >::type A(ASEXP);
+    rcpp_result_gen = Rcpp::wrap(inv_sympd(A));
+    return rcpp_result_gen;
+END_RCPP
+}
+// solve_mme
+arma::mat solve_mme(const arma::vec& y, const arma::mat& A, const double lambda);
+RcppExport SEXP dmisc_solve_mme(SEXP ySEXP, SEXP ASEXP, SEXP lambdaSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< const arma::vec& >::type y(ySEXP);
+    Rcpp::traits::input_parameter< const arma::mat& >::type A(ASEXP);
+    Rcpp::traits::input_parameter< const double >::type lambda(lambdaSEXP);
+    rcpp_result_gen = Rcpp::wrap(solve_mme(y, A, lambda));
+    return rcpp_result_gen;
+END_RCPP
+}
+// solve_sie
+Rcpp::List solve_sie(const arma::vec& y, const arma::mat& A, const double lambda);
+RcppExport SEXP dmisc_solve_sie(SEXP ySEXP, SEXP ASEXP, SEXP lambdaSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< const arma::vec& >::type y(ySEXP);
+    Rcpp::traits::input_parameter< const arma::mat& >::type A(ASEXP);
+    Rcpp::traits::input_parameter< const double >::type lambda(lambdaSEXP);
+    rcpp_result_gen = Rcpp::wrap(solve_sie(y, A, lambda));
     return rcpp_result_gen;
 END_RCPP
 }
@@ -151,6 +175,28 @@ BEGIN_RCPP
     Rcpp::traits::input_parameter< int >::type n(nSEXP);
     Rcpp::traits::input_parameter< bool >::type increasing(increasingSEXP);
     rcpp_result_gen = Rcpp::wrap(stl_partial_sort(x, n, increasing));
+    return rcpp_result_gen;
+END_RCPP
+}
+// routine
+double routine(const std::vector<std::string>& vec);
+RcppExport SEXP dmisc_routine(SEXP vecSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< const std::vector<std::string>& >::type vec(vecSEXP);
+    rcpp_result_gen = Rcpp::wrap(routine(vec));
+    return rcpp_result_gen;
+END_RCPP
+}
+// string_collapse
+std::vector<std::string> string_collapse(const Rcpp::DataFrame& data);
+RcppExport SEXP dmisc_string_collapse(SEXP dataSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< const Rcpp::DataFrame& >::type data(dataSEXP);
+    rcpp_result_gen = Rcpp::wrap(string_collapse(data));
     return rcpp_result_gen;
 END_RCPP
 }

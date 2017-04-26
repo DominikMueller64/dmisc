@@ -21,7 +21,7 @@ A list or matrix containing all combinations.
 Returns all pairs of elements occuring in a round robin design.
 }
 \examples{
-rrcombn(letters) 
+rrcombn(letters)
 
 }
 \author{

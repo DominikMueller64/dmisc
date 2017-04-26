@@ -1,4 +1,3 @@
-// [[Rcpp::depends(C++11)]]
 // [[Rcpp::depends(RcppArmadillo)]]
 #include <RcppArmadillo.h>
 #include <cstddef> // std::size_t

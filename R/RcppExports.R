@@ -25,28 +25,48 @@ add_diag_int_vec <- function(x, epsilon) {
     .Call('dmisc_col_scale_copy', PACKAGE = 'dmisc', x, center, scale)
 }
 
-.combine_asym_arma <- function(x, rows, cols) {
-    .Call('dmisc_combine_asym_arma', PACKAGE = 'dmisc', x, rows, cols)
-}
-
-.combine_sym_arma <- function(x, rows, cols) {
-    .Call('dmisc_combine_sym_arma', PACKAGE = 'dmisc', x, rows, cols)
-}
-
 match_dbl_cpp <- function(x, table, nomatch, tolerance) {
     .Call('dmisc_match_dbl_cpp', PACKAGE = 'dmisc', x, table, nomatch, tolerance)
+}
+
+#' @export
+prob_recomb <- function(x) {
+    .Call('dmisc_prob_recomb', PACKAGE = 'dmisc', x)
+}
+
+#' @export
+segr_var <- function(pat, mat, pos, p, alpha) {
+    .Call('dmisc_segr_var', PACKAGE = 'dmisc', pat, mat, pos, p, alpha)
 }
 
 nth_partial_sort <- function(x, nth, increasing = TRUE) {
     .Call('dmisc_nth_partial_sort', PACKAGE = 'dmisc', x, nth, increasing)
 }
 
-.sparse_tcrossprod <- function(x, y, nonzero) {
-    .Call('dmisc_tcrossprod', PACKAGE = 'dmisc', x, y, nonzero)
+inv_sympd <- function(A) {
+    .Call('dmisc_inv_sympd', PACKAGE = 'dmisc', A)
+}
+
+.solve_mme <- function(y, A, lambda) {
+    .Call('dmisc_solve_mme', PACKAGE = 'dmisc', y, A, lambda)
+}
+
+.solve_sie <- function(y, A, lambda) {
+    .Call('dmisc_solve_sie', PACKAGE = 'dmisc', y, A, lambda)
 }
 
 stl_partial_sort <- function(x, n, increasing = TRUE) {
     .Call('dmisc_stl_partial_sort', PACKAGE = 'dmisc', x, n, increasing)
+}
+
+#' @export
+routine <- function(vec) {
+    .Call('dmisc_routine', PACKAGE = 'dmisc', vec)
+}
+
+#' @export
+string_collapse <- function(data) {
+    .Call('dmisc_string_collapse', PACKAGE = 'dmisc', data)
 }
 
 .topN <- function(x, nth) {
