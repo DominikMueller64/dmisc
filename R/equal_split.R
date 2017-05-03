@@ -29,8 +29,8 @@
 #' # lists as input work as well
 #' equal_split(as.list(x), n, random = TRUE, beginning = FALSE)
 #'
-#' A too large number of desired subsets is handeled gracefully.
-#'equal_split(x, n = 20L, random = TRUE, beginning = FALSE)
+#' # A too large number of desired subsets is handeled gracefully.
+#' equal_split(x, n = 20L, random = TRUE, beginning = FALSE)
 #'
 #' @export
 equal_split <- function(x, n, random = TRUE, beginning = FALSE) {

@@ -10,7 +10,8 @@ URL: https://bitbucket.org/DominikMueller/dmisc
 LazyData: true
 LinkingTo: Rcpp, RcppArmadillo
 Imports:
-    Rcpp,
-    purrr,
-    RcppArmadillo
+    Rcpp (>= 0.12.10),
+    purrr (>= 0.2.2),
+    RcppArmadillo (>= 0.7.800.2.0),
+    hashmap (>= 0.2.0)
 RoxygenNote: 6.0.1
