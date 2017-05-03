@@ -4,7 +4,7 @@
 \alias{remapper}
 \title{Create a function for re-mapping values.}
 \usage{
-remapper(old, new, na_when_missing = TRUE)
+remapper(old, new, na_when_missing = TRUE, fun = NULL, ...)
 }
 \arguments{
 \item{old}{Vector. The old values.}
@@ -13,6 +13,10 @@ remapper(old, new, na_when_missing = TRUE)
 
 \item{na_when_missing}{Logical. If a value cannot be found, should \code{NA} be used or
 value queried for? (defaults to \code{TRUE}).}
+
+\item{fun}{A function applied to the result before returning.}
+
+\item{\dots}{Further arguments for \code{fun}.}
 }
 \value{
 A vector with re-mapped values.
