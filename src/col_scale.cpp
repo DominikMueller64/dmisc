@@ -1,25 +1,11 @@
+// [[Rcpp::plugins(cpp11)]]
 // #include <Rcpp.h>
 #include <RcppArmadillo.h>
 
 using namespace Rcpp;
 using namespace arma;
 
-// // [[Rcpp::export('.col_scale')]]
-// void col_scale(NumericMatrix x, NumericVector center, NumericVector scale) {
-//   
-//   int nrow = x.nrow();
-//   int ncol = x.ncol();
-//   for (int j = 0; j < ncol; j++) {
-//     double c = center(j);
-//     double s = scale(j);
-//     for (int i = 0; i < nrow; i++) {
-//       x(i, j) = (x(i, j) - c) / s;
-//     }
-//   }
-// }
-
-
-// [[Rcpp::export('.col_scale_inplace')]]
+// [[Rcpp::export('col_scale_inplace')]]
 void col_scale_inplace(arma::mat& x, const arma::vec& center,
                        const arma::vec& scale) {
   int len_center = center.n_elem;
@@ -47,7 +33,7 @@ void col_scale_inplace(arma::mat& x, const arma::vec& center,
 }
 
 
-// [[Rcpp::export('.col_scale_copy')]]
+// [[Rcpp::export('col_scale_copy')]]
 arma::mat col_scale_copy(const arma::mat& x, const arma::vec& center,
                        const arma::vec& scale) {
   mat y(x);

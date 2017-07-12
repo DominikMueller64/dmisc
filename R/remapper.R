@@ -38,7 +38,7 @@ remapper <- function(old, new, na_when_missing = TRUE, fun = NULL, ...){
     }
     if (is.function(fun)) {
       val <- lapply(X = val, FUN = fun, ...)
-      val <- unlist(x = val, recursive = FALSE, use.names = FALSE)
+      val <- unlist(x = val, recursive = FALSE, use.names = TRUE)
     }
     val
   }

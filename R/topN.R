@@ -32,6 +32,6 @@ topN <- function(x, nth) {
   if (nth < 1L || ncol(x) < nth)
     stop("'nth' must be an integer between 1 and 'ncol(x)'.")
   
-  .topN(x, nth)
+  topN_rcpp(x, nth)
 }
 

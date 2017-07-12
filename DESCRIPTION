@@ -9,6 +9,7 @@ License: GPL-3
 URL: https://bitbucket.org/DominikMueller/dmisc
 LazyData: true
 LinkingTo: Rcpp, RcppArmadillo
+SystemRequirements: C++11
 Imports:
     Rcpp (>= 0.12.10),
     purrr (>= 0.2.2),

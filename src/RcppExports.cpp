@@ -75,20 +75,6 @@ BEGIN_RCPP
     return rcpp_result_gen;
 END_RCPP
 }
-// match_dbl_cpp
-IntegerVector match_dbl_cpp(NumericVector x, NumericVector table, int nomatch, double tolerance);
-RcppExport SEXP dmisc_match_dbl_cpp(SEXP xSEXP, SEXP tableSEXP, SEXP nomatchSEXP, SEXP toleranceSEXP) {
-BEGIN_RCPP
-    Rcpp::RObject rcpp_result_gen;
-    Rcpp::RNGScope rcpp_rngScope_gen;
-    Rcpp::traits::input_parameter< NumericVector >::type x(xSEXP);
-    Rcpp::traits::input_parameter< NumericVector >::type table(tableSEXP);
-    Rcpp::traits::input_parameter< int >::type nomatch(nomatchSEXP);
-    Rcpp::traits::input_parameter< double >::type tolerance(toleranceSEXP);
-    rcpp_result_gen = Rcpp::wrap(match_dbl_cpp(x, table, nomatch, tolerance));
-    return rcpp_result_gen;
-END_RCPP
-}
 // prob_recomb
 Rcpp::NumericMatrix prob_recomb(const Rcpp::NumericVector& x);
 RcppExport SEXP dmisc_prob_recomb(SEXP xSEXP) {
@@ -115,6 +101,20 @@ BEGIN_RCPP
     return rcpp_result_gen;
 END_RCPP
 }
+// match_dbl_cpp
+IntegerVector match_dbl_cpp(NumericVector x, NumericVector table, int nomatch, double tolerance);
+RcppExport SEXP dmisc_match_dbl_cpp(SEXP xSEXP, SEXP tableSEXP, SEXP nomatchSEXP, SEXP toleranceSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< NumericVector >::type x(xSEXP);
+    Rcpp::traits::input_parameter< NumericVector >::type table(tableSEXP);
+    Rcpp::traits::input_parameter< int >::type nomatch(nomatchSEXP);
+    Rcpp::traits::input_parameter< double >::type tolerance(toleranceSEXP);
+    rcpp_result_gen = Rcpp::wrap(match_dbl_cpp(x, table, nomatch, tolerance));
+    return rcpp_result_gen;
+END_RCPP
+}
 // nth_partial_sort
 NumericVector nth_partial_sort(NumericVector x, int nth, bool increasing);
 RcppExport SEXP dmisc_nth_partial_sort(SEXP xSEXP, SEXP nthSEXP, SEXP increasingSEXP) {
@@ -125,43 +125,6 @@ BEGIN_RCPP
     Rcpp::traits::input_parameter< int >::type nth(nthSEXP);
     Rcpp::traits::input_parameter< bool >::type increasing(increasingSEXP);
     rcpp_result_gen = Rcpp::wrap(nth_partial_sort(x, nth, increasing));
-    return rcpp_result_gen;
-END_RCPP
-}
-// inv_sympd
-arma::mat inv_sympd(const arma::mat& A);
-RcppExport SEXP dmisc_inv_sympd(SEXP ASEXP) {
-BEGIN_RCPP
-    Rcpp::RObject rcpp_result_gen;
-    Rcpp::RNGScope rcpp_rngScope_gen;
-    Rcpp::traits::input_parameter< const arma::mat& >::type A(ASEXP);
-    rcpp_result_gen = Rcpp::wrap(inv_sympd(A));
-    return rcpp_result_gen;
-END_RCPP
-}
-// solve_mme
-arma::mat solve_mme(const arma::vec& y, const arma::mat& A, const double lambda);
-RcppExport SEXP dmisc_solve_mme(SEXP ySEXP, SEXP ASEXP, SEXP lambdaSEXP) {
-BEGIN_RCPP
-    Rcpp::RObject rcpp_result_gen;
-    Rcpp::RNGScope rcpp_rngScope_gen;
-    Rcpp::traits::input_parameter< const arma::vec& >::type y(ySEXP);
-    Rcpp::traits::input_parameter< const arma::mat& >::type A(ASEXP);
-    Rcpp::traits::input_parameter< const double >::type lambda(lambdaSEXP);
-    rcpp_result_gen = Rcpp::wrap(solve_mme(y, A, lambda));
-    return rcpp_result_gen;
-END_RCPP
-}
-// solve_sie
-Rcpp::List solve_sie(const arma::vec& y, const arma::mat& A, const double lambda);
-RcppExport SEXP dmisc_solve_sie(SEXP ySEXP, SEXP ASEXP, SEXP lambdaSEXP) {
-BEGIN_RCPP
-    Rcpp::RObject rcpp_result_gen;
-    Rcpp::RNGScope rcpp_rngScope_gen;
-    Rcpp::traits::input_parameter< const arma::vec& >::type y(ySEXP);
-    Rcpp::traits::input_parameter< const arma::mat& >::type A(ASEXP);
-    Rcpp::traits::input_parameter< const double >::type lambda(lambdaSEXP);
-    rcpp_result_gen = Rcpp::wrap(solve_sie(y, A, lambda));
     return rcpp_result_gen;
 END_RCPP
 }
@@ -200,15 +163,38 @@ BEGIN_RCPP
     return rcpp_result_gen;
 END_RCPP
 }
-// topN
-NumericVector topN(NumericMatrix x, int nth);
-RcppExport SEXP dmisc_topN(SEXP xSEXP, SEXP nthSEXP) {
+// topN_rcpp
+NumericVector topN_rcpp(NumericMatrix x, int nth);
+RcppExport SEXP dmisc_topN_rcpp(SEXP xSEXP, SEXP nthSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
     Rcpp::traits::input_parameter< NumericMatrix >::type x(xSEXP);
     Rcpp::traits::input_parameter< int >::type nth(nthSEXP);
-    rcpp_result_gen = Rcpp::wrap(topN(x, nth));
+    rcpp_result_gen = Rcpp::wrap(topN_rcpp(x, nth));
     return rcpp_result_gen;
 END_RCPP
+}
+
+static const R_CallMethodDef CallEntries[] = {
+    {"dmisc_add_diag_double", (DL_FUNC) &dmisc_add_diag_double, 2},
+    {"dmisc_add_diag_double_vec", (DL_FUNC) &dmisc_add_diag_double_vec, 2},
+    {"dmisc_add_diag_int", (DL_FUNC) &dmisc_add_diag_int, 2},
+    {"dmisc_add_diag_int_vec", (DL_FUNC) &dmisc_add_diag_int_vec, 2},
+    {"dmisc_col_scale_inplace", (DL_FUNC) &dmisc_col_scale_inplace, 3},
+    {"dmisc_col_scale_copy", (DL_FUNC) &dmisc_col_scale_copy, 3},
+    {"dmisc_prob_recomb", (DL_FUNC) &dmisc_prob_recomb, 1},
+    {"dmisc_segr_var", (DL_FUNC) &dmisc_segr_var, 5},
+    {"dmisc_match_dbl_cpp", (DL_FUNC) &dmisc_match_dbl_cpp, 4},
+    {"dmisc_nth_partial_sort", (DL_FUNC) &dmisc_nth_partial_sort, 3},
+    {"dmisc_stl_partial_sort", (DL_FUNC) &dmisc_stl_partial_sort, 3},
+    {"dmisc_routine", (DL_FUNC) &dmisc_routine, 1},
+    {"dmisc_string_collapse", (DL_FUNC) &dmisc_string_collapse, 1},
+    {"dmisc_topN_rcpp", (DL_FUNC) &dmisc_topN_rcpp, 2},
+    {NULL, NULL, 0}
+};
+
+RcppExport void R_init_dmisc(DllInfo *dll) {
+    R_registerRoutines(dll, NULL, CallEntries, NULL, NULL);
+    R_useDynamicSymbols(dll, FALSE);
 }

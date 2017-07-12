@@ -89,13 +89,13 @@ col_scale <- function(x, center = FALSE, scale = FALSE, inplace = FALSE) {
   } else stop("Length of 'scale' must be one or equal the number of columns of 'x'.")
   
   if (!inplace) {
-    x <- .col_scale_copy(x, center, scale)
+    x <- col_scale_copy(x, center, scale)
     attr(x, "scaled:center") <- center
     attr(x, "scaled:scale") <- scale
     return(x)
   } else {
     attr(x, "scaled:center") <- center
     attr(x, "scaled:scale") <- scale
-    .col_scale_inplace(x, center, scale)
+    col_scale_inplace(x, center, scale)
   }
 }
